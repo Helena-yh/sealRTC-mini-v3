@@ -1,0 +1,44 @@
+<view class="rong-container rong-main">
+  <view class="rong-room-info">{{locales.roomId}}{{roomId}}</view>
+
+  <view class="rong-users">
+    <view wx:if="{{pusher}}" class="rong-pusher-user">
+      <live-pusher id="livepusher"  enable-camera="{{false}}" class="rong-pusher {{!enableVideo ? 'rong-display-none' : ''}}" url="{{pusher.stream.uri}}" autopush="{{true}}" mode="live" bindstatechange="statechange" enable-camera="{{enableVideo}}"/>
+      <image mode="aspectFit" src="../images/audio-cover.png" class="rong-pusher rong-pusher-image {{enableVideo ? 'rong-display-none' : ''}}"></image>
+    </view>
+        
+    <view class="rong-user">
+      <view class="rong-user-video" wx:for-items="{{players}}" wx:key="name">
+        <live-player class="rong-player rong-pusher-image  {{!item.mediaType ? 'rong-display-none' : ''}}" autoplay="{{true}}" object-fit="contain" style="float: left;" min-cache="1" max-cache="3" mode="RTC" src="{{item.stream.uri}}" />
+        <image mode="aspectFit" src="../images/audio-cover.png" class="rong-pusher rong-pusher-image {{item.mediaType ? 'rong-display-none' : ''}}"></image>
+      </view>
+    </view>
+  </view>
+
+  <view class="rong-btns">
+    <view wx:if="{{enableVideo}}" bindtap="changeVideo"><image src="../images/video-enable.png" class="rong-icon rong-set-video"></image></view>
+    <view wx:if="{{!enableVideo}}" bindtap="changeVideo"><image src="../images/video-disable.png" class="rong-icon rong-set-video"></image></view>
+    <view bindtap="leave"><image src="../images/hangup.png" class="rong-icon rong-leave"></image></view>
+    <view wx:if="{{enableAudio}}" bindtap="changeAudio"><image src="../images/audio-enable.png" class="rong-icon rong-set-audio"></image></view>
+    <view wx:if="{{!enableAudio}}" bindtap="changeAudio"><image src="../images/audio-disable.png" class="rong-icon rong-set-video"></image></view>
+  </view>
+
+  <scroll-view scroll-y="true" class="rong-btns-right">
+    <view bindtap="powerDrawer" data-statu="open" ><image src="../images/user-list.png" class="rong-icon rong-set-video"></image></view>
+    <view bindtap="switchCamera"><image src="../images/change-video.png" class="rong-icon rong-set-video"></image></view>
+  </scroll-view>
+
+  <view animation="{{animationData}}" class="rong-drawer-attr-box" wx:if="{{showModalStatus}}">
+    <!--drawer content-->
+    <view class="rong-drawer-content">
+        <view class="rong-drawer-title rong-line">
+          <view class="rong-drawer-title-left">在线人数: {{userList.length}}</view>
+          <view bindtap="powerDrawer" data-statu="close" class="rong-drawer-title-right">关闭</view>
+        </view>
+        <view wx:for-items="{{userList}}" wx:key="userId" class="rong-drawer-title">
+          <text>{{item.userName}} ({{item.type}}) </text>
+          
+        </view>
+    </view>
+</view>
+</view>

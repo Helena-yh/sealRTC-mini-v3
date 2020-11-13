@@ -1,0 +1,159 @@
+.rong-room-info{
+  top: 100rpx;
+  position: absolute;
+  width: 100%;
+  text-align: center;
+  z-index: 100;
+}
+.rong-main{
+  box-sizing: border-box;
+  margin: 0 auto;
+  text-align: center;
+
+}
+.rong-toolbars{
+  margin-top: 5%;
+}
+
+.rong-picker, .rong-input-ids{
+  margin-bottom: 50rpx;
+}
+
+.rong-main-button{
+  margin-left: 10rpx;
+  margin-bottom: 10rpx;
+  width: 200rpx;
+}
+
+.rong-users{
+  height: 100%;
+}
+
+.rong-user{
+  width: 100%;
+  height: 285rpx;
+  position: absolute;
+  bottom: 150rpx;
+  display: flex;  
+  overflow-x: auto;
+}
+
+.rong-player, .rong-pusher{
+  height: inherit;
+  width: inherit;
+}
+
+.rong-user-name{
+  position: absolute;
+  top: 10rpx;
+  right: 10rpx;
+  word-break:break-all;
+}
+
+.rong-timer{
+  font-size: 100rpx;
+  background-color: #000;
+  color: red;
+  font-weight: bold;
+}
+
+.rong-display-none{
+  display: none;
+}
+.rong-pusher-user {
+  width: 100%;
+  height: 100%;
+}
+.rong-user-video {
+  width: 160rpx;
+  height: 285rpx;
+  border: 1px solid #b8bdc4;
+  margin: 0 10rpx;
+}
+.rong-pusher-image{
+  background: #fff;
+  z-index: 100;
+}
+
+.rong-icon{
+  /* border-radius: 50%; */
+  height: 80rpx;
+  width: 80rpx;
+  background-size: contain;
+  background-repeat: no-repeat;
+  margin-bottom: 26rpx;
+}
+
+.rong-btns{
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  display: flex;
+}
+.rong-btns view{
+  width: 33%;
+  position: relative;
+}
+.rong-btns-right{
+  position: absolute;
+  width: 80rpx;
+  right: 10rpx;
+  bottom: 500rpx;
+}
+
+/*mask*/
+.rong-drawer-screen {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  background: #000;
+  opacity: 0.2;
+  overflow: hidden;
+}
+/*content*/
+.rong-drawer-attr-box {
+  width: 100%;
+  overflow: hidden;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  z-index: 1001;
+  background: #3e3e3e;
+}
+.rong-drawer-content {
+  padding: 20rpx 40rpx;
+  height: 470rpx;
+  overflow-y: scroll;
+}
+.rong-drawer-title{
+  display: flex;
+  text-align: left;
+  padding: 0 20rpx;  
+}
+.rong-drawer-title-left{
+  width: 80%;
+}
+.rong-drawer-title-right{
+  text-align: right;
+  width: 20%;
+}
+.rong-line{
+  border-bottom: 1px solid #f8f8f8;
+}
+
+.rong-btns-right view{
+  width: 70rpx;
+  height: 70rpx;
+  border: 1rpx solid;
+  border-radius: 50%;
+  background: #3e3e3e;
+  margin-bottom: 30rpx;
+}
+.rong-btns-right image{
+  height: 40rpx;
+  width: 40rpx;
+  margin: 15rpx;
+}

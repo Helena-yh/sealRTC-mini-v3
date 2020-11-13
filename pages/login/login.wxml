@@ -1,0 +1,41 @@
+<view class="rong-container rong-login">
+	<image class="rong-login-bg" src="../images/cover.png"></image>
+	<view class="rong-login-main">
+		<view class="rong-bars-title"> <text>{{locales.appName}}</text></view>
+		<view class="rong-bars">
+
+			<!--roomid -->
+			<view class="rong-bar">
+				<input type="text" class="rong-input rong-input-roomid" placeholder-class="rong-placeholder" placeholder="{{locales.roomPlaceholder}}" bindinput="onRoomInput" value="{{roomId}}" />
+				<text hidden="{{isHiddenRoomTip}}" class="rong-tip rong-login-tip">{{locales.roomTip}}</text>
+			</view>
+
+			<!--name -->
+			<view class="rong-bar">
+				<input type="text" class="rong-input rong-input-uid" maxlength="8" placeholder-class="rong-placeholder" placeholder="{{locales.uNamePlaceholder}}" bindinput="onNameInput" value="{{userName}}"/>
+				<text hidden="{{isHiddenTip}}" class="rong-tip rong-login-tip">{{locales.uNameTip}}</text>
+			</view>
+
+			<!--phone -->
+			<view class="rong-bar">
+				<input type="text" class="rong-input rong-input-phone" placeholder-class="rong-placeholder" placeholder="{{locales.phonePlaceholder}}" bindblur="onPhoneInput" value="{{phone}}"/>
+				<button hidden="{{isShowSmsCode}}" class="mini-btn rong-phone-btn" size="mini" bindtap="getSmsCode">
+					<text>{{smsCodeBtn}}</text>
+				</button>
+				<text hidden="{{isHiddenPhoneTip}}" class="rong-tip rong-login-tip">{{locales.phoneTip}}</text>
+			</view>
+
+			<!--SmsCode -->
+			<view class="rong-bar" hidden="{{isShowSmsCode}}">
+				<input type="text" class="rong-input rong-input-phone" placeholder-class="rong-placeholder" placeholder="{{locales.smsCodePlaceholder}}" type="number" bindinput="onSmsCodeInput" />
+				<text hidden="{{isHiddenSmsCodeTip}}" class="rong-tip rong-login-tip">{{locales.smsCodeTip}}</text>
+			</view>
+			<radio-group class="radio-group" bindchange="radioChange">
+				<checkbox class="radio" value="0" class="rong-checkbox">{{locales.aduioMode}}</checkbox>
+				<checkbox class="radio" value="-1" class="rong-checkbox">{{locales.spectatorMode}}</checkbox>
+			</radio-group>
+			<button class="rong-button rong-button-login" bindtap="login">{{locales.login}}</button>
+		</view>
+	</view>
+
+</view>

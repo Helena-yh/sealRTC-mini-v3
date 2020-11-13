@@ -1,0 +1,32 @@
+
+.rong-container{
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  background: linear-gradient(0deg,#36455F, #9eb5db);
+  color: #FFF;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+.rong-button{
+  background-color: #09B5CE;
+  color: #FFF;
+}
+.rong-input{
+  border-bottom: 1px solid #CCC;
+  margin: 0 auto;
+  padding: 5px 0;
+}
+
+.rong-placeholder{
+  color: #FFF;
+  font-size: 28rpx;
+}
+.rong-tip{
+  font-size: 10px;
+}
